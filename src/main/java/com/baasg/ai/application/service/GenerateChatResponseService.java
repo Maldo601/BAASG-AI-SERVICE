@@ -1,5 +1,6 @@
 package com.baasg.ai.application.service;
 
+import com.baasg.ai.application.model.AIProvider;
 import com.baasg.ai.application.port.input.GenerateChatResponseCaseUse;
 import com.baasg.ai.application.port.output.ChatCompletionPort;
 import java.util.Objects;
@@ -14,7 +15,9 @@ public class GenerateChatResponseService implements GenerateChatResponseCaseUse 
     }
 
     @Override
-    public String generate(String prompt) {
-        return chatCompletionPort.complete(prompt);
+    public String generate(String prompt, AIProvider provider) {
+        return chatCompletionPort.complete(
+                prompt,
+                Objects.requireNonNull(provider, "AIProvider cannot be null"));
     }
 }
