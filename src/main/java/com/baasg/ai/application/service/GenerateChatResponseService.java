@@ -16,8 +16,6 @@ public class GenerateChatResponseService implements GenerateChatResponseCaseUse 
 
     @Override
     public String generate(String prompt, AIProvider provider) {
-        return chatCompletionPort.complete(
-                prompt,
-                Objects.requireNonNull(provider, "AIProvider cannot be null"));
+        return chatCompletionPort.complete(prompt, Objects.requireNonNull(provider, "AIProvider cannot be null"));
     }
 }

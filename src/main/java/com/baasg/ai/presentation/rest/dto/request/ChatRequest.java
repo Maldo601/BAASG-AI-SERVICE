@@ -1,3 +1,6 @@
 package com.baasg.ai.presentation.rest.dto.request;
-public record ChatRequest(String prompt) {
+
+import com.baasg.ai.application.model.AIProvider;
+
+public record ChatRequest(String prompt, AIProvider provider) {
 }

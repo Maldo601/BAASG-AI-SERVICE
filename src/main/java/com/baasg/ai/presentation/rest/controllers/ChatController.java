@@ -25,7 +25,7 @@ public class ChatController {
     @PostMapping
     public ResponseEntity<ChatResponse> generate(@RequestBody ChatRequest request) {
 
-        String response = generateChatResponseCaseUse.generate(request.prompt());
+        String response = generateChatResponseCaseUse.generate(request.prompt(), request.provider());
 
         return ResponseEntity.ok(new ChatResponse(response));
     }

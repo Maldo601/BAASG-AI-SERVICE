@@ -25,4 +25,8 @@ public class GeminiChatCompletionAdapter implements AIProviderAdapter {
     public String complete(String prompt) {
         return chatModel.call(prompt);
     }
+
+    public String getConfiguredModel() {
+        return chatModel.getOptions().getModel();
+    }
 }
